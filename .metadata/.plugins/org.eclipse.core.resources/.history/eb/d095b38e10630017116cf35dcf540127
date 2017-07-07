@@ -1,0 +1,16 @@
+package pl.javastart.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import pl.javastart.component.TimeComponent;
+
+
+@Controller
+public class TimeController {
+	
+	private TimeComponent timeComponent;
+	@Autowired
+	
+	
+}

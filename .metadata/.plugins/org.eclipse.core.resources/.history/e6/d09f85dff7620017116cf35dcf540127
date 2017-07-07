@@ -1,0 +1,5 @@
+package pl.javastart.controller;
+
+public class HomeController {
+
+}

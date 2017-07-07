@@ -1,0 +1,30 @@
+package pl.javastart.controller;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+ 
+@Controller
+public class HomeController {
+ 
+//    @RequestMapping("/")
+//    public String home() {
+//        return "home";
+//    }
+	
+	@GetMapping("/")
+	public String home(HttpServletRequest request) {
+	    String username = request.getParameter("username");
+	    if(username != null) {
+	        System.out.println("Hello " + username);
+	    }
+	    Cookie[] cookies = request.getCookies();
+	    for(Cookie cookie: cookies) {
+	        System.out.println(cookie.getName() + " " + cookie.getValue());
+	    }
+	    return "home";
+	}
+}
